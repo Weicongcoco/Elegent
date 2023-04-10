@@ -1,13 +1,13 @@
 import time
-from time import sleep
 import clr
 import GPUtil
-
-
-clr.AddReference(r"D:\Pycharm\PyCharm_Community_Edition_2022.2.3\projects_code\工作项目\OpenHardwareMonitor\OpenHardwareMonitorLib")
 from OpenHardwareMonitor.Hardware import Computer
+from gpiozero import CPUTemperature
+# clrAddReferrnce中需要使用下载OpenHardwareMonitor并解压，该函数里输入的是OpenHardwareMonitor里面的OpenHardwareMonitorLib地址
+clr.AddReference(r"./OpenHardwareMonitor\OpenHardwareMonitorLib")
 
 c = Computer()
+
 c.CPUEnabled = True
 c.GPUEnalbed = True
 c.Open()
@@ -21,6 +21,5 @@ while True:
             print("GPU温度", gpu.temperature)
             print()
             break
-    time.sleep(1)
-
+    time.sleep(0.5)
 

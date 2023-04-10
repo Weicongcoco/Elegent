@@ -1,0 +1,2 @@
+Windows下需要使用管理员身份运行
+Linux建议利用gpiozero.CPUTemperature获取CPU温度
